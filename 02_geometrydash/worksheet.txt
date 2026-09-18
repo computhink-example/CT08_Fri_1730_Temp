@@ -1,0 +1,66 @@
+Essential Components of a Game
+
+Write down 3 games that you have played recently. 
+For each one, write down:
+1. What is the goal of the game?
+2. How do you interact / control it?
+3. What happens when you win or lose?
+
+Minecraft
+1. Defeat the Ender Dragon.
+2. WASD / Jump - Movement, Left Click - Mine, Right Click - Place / Interact.
+3. You beat the game and the credits roll, when you die the items in your inventory are dropped.
+
+
+Deconstructing Geometry Dash
+
+What are the objects?
+- Square (Main Character)
+- Spikes
+- Floor / Platforms
+
+What are the player's actions?
+- Jump
+
+What is the goal?
+- Make it to the end of the level
+
+What causes game over?
+- When you hit a spike / wall
+
+How is progress shown?
+- Progress bar
+
+
+Problem Decomposition
+
+For each phase:
+• Describe what it will look like (e.g. “Player moves from right to left”)
+• The Gameplay mechanics (e.g. “Press space to jump”)
+• Any constraints that we need to add in. (e.g. How many times the player can jump)
+
+1. Game Setup, Load Assets, Create Player
+ - Create canvas
+ - Create player variable and load image
+
+2. Build Level and Tile Maps
+ - Create and load tile map
+
+3. Auto-run and Jump
+ - Player is always moving right
+ - Player jumps on click / spacebar
+
+4. Obstacles, Orbs and Reset
+ - Adding more walls, spikes and orbs to the map
+ - When player collides with wall or spike, restart the game
+
+5. Game Start Screen and Level Clear
+ - Start and end menu
+ - Add a finish line to end the level
+
+6. Visual and Sound Effects
+ - Background music
+ - Death sound effect
+ - Movement particle effects
+ - Death particle effects
+ - Spawn particle effect
