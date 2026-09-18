@@ -14,6 +14,12 @@ let leftWall, rightWall, topWall, botWall;
 // Game variable
 let gameStart = false;
 let gameOver = false;
+let score = 0;
+let cooldown = 500; // 1000 ms = 1 second
+
+// Sounds
+let bounceSound;
+let gameOverSound;
 
 //=========================================
 // Code
@@ -31,6 +37,10 @@ function preload() {
 
     // Load the model
     handPose = ml5.handPose(options);
+
+    // Load sound
+    bounceSound = createAudio("assets/LowBoing.mp3");
+    gameOverSound = createAudio("assets/DunDunn.mp3");
 }
 
 function setup() {
@@ -121,24 +131,69 @@ function draw() {
         text("Use your Index Finger to Bounce the Ball", width * 0.5, height * 0.6);
         text("Press Space to start", width * 0.5, height * 0.7);
     } else {
-        // Check if model detects a hand
-        if (hands.length > 0) {
-            // console.log(hands);
-
-            // Set keypoint to index finger tip position
-            let currentHand = hands[0];
-            let keypoint = currentHand.keypoints[8];
-            // circle(keypoint.x, keypoint.y, 10);   // (x pos, y pos, diameter)
-
-            // Make sprite follow finger tip
-            fingerTip.x = keypoint.x;
-            fingerTip.y = keypoint.y;
-            fingerTip.visible = true;
-            fingerTip.collider = "kinematic";
+        if (gameOver === true) {
+            // Game over menu
+            textAlign(CENTER, CENTER); // horizontal & vertical alignment
+            textSize(40);
+            fill("rgb(255, 50, 0)");
+            text("Game Over!", width * 0.5, height * 0.5); // text(string, x, y)
+        
+            textSize(32);
+            fill("rgb(255, 20, 20)");
+            text("Press Space to Restart", width * 0.5, height * 0.6);
         } else {
-            // Hide sprite if there are no hands
-            fingerTip.visible = false;
-            fingerTip.collider = "none";
+            // Check if model detects a hand
+            if (hands.length > 0) {
+                // console.log(hands);
+    
+                // Set keypoint to index finger tip position
+                let currentHand = hands[0];
+                let keypoint = currentHand.keypoints[8];
+                // circle(keypoint.x, keypoint.y, 10);   // (x pos, y pos, diameter)
+    
+                // Make sprite follow finger tip
+                fingerTip.x = keypoint.x;
+                fingerTip.y = keypoint.y;
+                fingerTip.visible = true;
+                fingerTip.collider = "kinematic";
+            } else {
+                // Hide sprite if there are no hands
+                fingerTip.visible = false;
+                fingerTip.collider = "none";
+            }
+    
+            // Check collision
+            if (balloon.collides(botWall)) {
+                // Game over
+                gameOver = true;
+                // Hide sprites
+                balloon.collider = "none";
+                balloon.visible = false;
+                fingerTip.collider = "none";
+                fingerTip.visible = false;
+
+                gameOverSound.play();
+            }
+
+            // Bounce cooldown
+            if (cooldown > 0) {
+                // deltaTime = time since last frame
+                cooldown -= deltaTime;
+            }
+            if (balloon.collides(fingerTip) && cooldown <= 0) {
+                // Increment score
+                score++;
+                // Reset cooldown
+                cooldown = 500;
+
+                bounceSound.play();
+            }
+
+            // Display score
+            textAlign(LEFT, CENTER);
+            textSize(32);
+            fill("rgb(255, 255, 0)");
+            text("Score: " + score, width * 0.02, height * 0.1);
         }
     }
 }
@@ -155,13 +210,24 @@ function gotHands(results) {
 function keyPressed() {
     // Start game key
     if (key === " ") {
+        // Reset game state
         gameStart = true;
+        gameOver = false;
+        score = 0;
 
-        // Start sprite colliders
+        // Set sprite properties
         fingerTip.collider = "kinematic"; // No physics but can move through code
+        fingerTip.visible = true;
+
         balloon.collider = "dynamic";
+        balloon.visible = true;
         balloon.bounciness = 1;
         balloon.mass = 5;
         balloon.drag = 0.1;
+        balloon.x = width / 2;
+        balloon.y = height * 0.2;
+        // Reset momentum
+        balloon.vel.x = 0;
+        balloon.vel.y = 0;
     }
 }
