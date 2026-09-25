@@ -45,7 +45,7 @@ function setup() {
             aspectRatio: cameraWidth / cameraHeight
         },
         audio: false,
-        flipped: true // Makes the video mirrored.​
+        flipped: true
     };
     video = createCapture(constraints);
     video.hide();
