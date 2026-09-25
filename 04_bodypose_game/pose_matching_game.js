@@ -137,6 +137,7 @@ function drawMiddleLine() {
 // Pose Functions
 // ====================================================
 
+// resu
 function gotPeople() {
-    
+
 }
