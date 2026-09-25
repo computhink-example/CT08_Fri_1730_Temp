@@ -227,6 +227,6 @@ function drawAllSkeletons() {
     for (let i = 0; i < detectedPeople.length; i++) {
         // For each detected person
         let person = detectedPeople[i];
-        
+        drawSkeleton(person, skeletonColour);
     }
 }
