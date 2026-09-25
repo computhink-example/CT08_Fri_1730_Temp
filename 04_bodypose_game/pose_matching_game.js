@@ -29,7 +29,8 @@ let bodyPose; // ML Model
 let detectedPeople = []; // Array to store people the model detects
 
 // Game variables
-let skeletonColour
+let skeletonColour;
+
 
 // ====================================================
 // Preload
