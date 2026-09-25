@@ -148,5 +148,5 @@ function drawDetectionStatus() {
     // Set up text
     fill(0);
     textSize(24);
-    text
+    text("People Detected: " + detectedPeople.length)
 }
