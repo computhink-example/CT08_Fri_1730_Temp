@@ -162,7 +162,7 @@ function drawDetectionStatus() {
 }
 
 // Draw circle on body point
-function drawBodyPoint() {
+function drawBodyPoint(point) {
 
 }
 
