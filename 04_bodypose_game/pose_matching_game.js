@@ -31,7 +31,6 @@ let detectedPeople = []; // Array to store people the model detects
 // Game variables
 let skeletonColour;
 
-
 // ====================================================
 // Preload
 // ====================================================
@@ -69,6 +68,8 @@ function setup() {
 
     // Set up text.
     textAlign(CENTER, CENTER);
+
+    
 }
 
 
