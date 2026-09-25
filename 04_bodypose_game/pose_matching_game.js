@@ -222,3 +222,6 @@ function drawSkeleton(person, skeletonColor) {
 }
 
 // Draw all detected people's skeletons
+function drawAllSkeletons() {
+    
+}
