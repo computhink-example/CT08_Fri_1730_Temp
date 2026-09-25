@@ -139,5 +139,5 @@ function drawMiddleLine() {
 
 // results parameter received from the model
 function gotPeople(results) {
-
+    
 }
