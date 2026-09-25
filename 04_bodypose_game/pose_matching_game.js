@@ -161,7 +161,7 @@ function drawDetectionStatus() {
     console.log(detectedPeople);
 }
 
-//
+// Draw 
 function drawBodyPoint() {
 
 }
