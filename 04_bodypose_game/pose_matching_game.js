@@ -93,7 +93,8 @@ function draw() {
     // Draw debug info
     drawDetectionStatus();
 
-    // Draw
+    // Draw skeleton for all detected people
+    drawAllSkeletons();
 }
 
 // ====================================================
