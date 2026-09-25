@@ -59,7 +59,8 @@ function setup() {
     video = createCapture(constraints);
     video.hide();
 
-    // G
+    // Give video feed to model to start detecting
+    
 
     // Set up text.
     textAlign(CENTER, CENTER);
