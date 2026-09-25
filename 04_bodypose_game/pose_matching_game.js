@@ -83,6 +83,9 @@ function draw() {
 
     // Draw webcam video
     image(video, cameraX, 0, cameraWidth, cameraHeight);
+
+    // Draw debug info
+    drawDetectionStatus();
 }
 
 // ====================================================
