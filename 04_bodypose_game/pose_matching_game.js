@@ -161,7 +161,7 @@ function drawDetectionStatus() {
     console.log(detectedPeople);
 }
 
-// Draw 
+// Draw circle on body point
 function drawBodyPoint() {
 
 }
