@@ -23,7 +23,7 @@ let leftPanelX = 0;
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
 
-// Video
+let video;
 
 // ====================================================
 // Preload
