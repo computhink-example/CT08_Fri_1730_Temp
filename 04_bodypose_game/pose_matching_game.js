@@ -33,7 +33,7 @@ let bodyPose; // ML Model
 
 function preload(){
     // Load the Body Pose model
-    bodyPose = ml5.bodyPose(options);
+    bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
 }
 
 // ====================================================
