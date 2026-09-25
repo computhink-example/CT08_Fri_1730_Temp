@@ -60,7 +60,7 @@ function setup() {
     video.hide();
 
     // Give video feed to model to start detecting
-    
+    bodyPose.detectStart
 
     // Set up text.
     textAlign(CENTER, CENTER);
