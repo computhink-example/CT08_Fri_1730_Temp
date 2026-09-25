@@ -145,5 +145,6 @@ function gotPeople(results) {
 
 // Draws debug info on screen and console
 function drawDetectionStatus() {
+    fill(0);
     
 }
