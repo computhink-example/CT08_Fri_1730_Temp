@@ -163,7 +163,7 @@ function drawDetectionStatus() {
 
 // Draw circle on body point
 function drawBodyPoint(point) {
-    
+    circle
 }
 
 // Draws one person's skeleton.
