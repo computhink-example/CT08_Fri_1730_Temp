@@ -143,7 +143,7 @@ function gotPeople(results) {
     detectedPeople = results;
 }
 
-// Draws 
+// Draws debug info on screen
 function drawDetectionStatus() {
 
 }
