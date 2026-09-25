@@ -60,7 +60,7 @@ function setup() {
     video.hide();
 
     // Give video feed to model to start detecting
-    // Send result to 
+    // Send result to gotPeople function
     bodyPose.detectStart(video, gotPeople);
 
     // Set up text.
