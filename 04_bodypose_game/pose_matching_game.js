@@ -37,9 +37,9 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
-    
+    // Set up Canvas
     new Canvas(totalCanvasWidth, cameraHeight);
-    // Setup webcam video
+    // Set up webcam video
     let constraints = {
         video: {
             width: cameraWidth,
