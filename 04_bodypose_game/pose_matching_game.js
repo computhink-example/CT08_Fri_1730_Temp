@@ -132,3 +132,7 @@ function drawMiddleLine() {
     // Draw the middle line inside the webcam area.
     line(width / 2, 0, width / 2, cameraHeight);
 }
+
+// ====================================================
+// Draw middle divider line
+// ====================================================
