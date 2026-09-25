@@ -37,6 +37,29 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
+  let constraints = {​
+
+        video: {​
+
+            width: cameraWidth,​
+
+            height: cameraHeight,​
+
+            aspectRatio: cameraWidth / cameraHeight​
+
+        },​
+
+        audio: false,​
+
+        flipped: true // Makes the video mirrored.​
+
+    };
+
+
+
+video = createCapture(constraints);
+
+    video.hide();
 
     // Set up text.
     textAlign(CENTER, CENTER);
