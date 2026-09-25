@@ -69,7 +69,8 @@ function setup() {
     // Set up text.
     textAlign(CENTER, CENTER);
 
-    // S
+    // Set game variables
+    skeletonColour = color()
 }
 
 
