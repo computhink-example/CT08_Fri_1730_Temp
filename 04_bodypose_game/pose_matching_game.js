@@ -77,7 +77,7 @@ function draw() {
     drawMiddleLine();
 
     // Draw webcam video
-    image(video, cameraX, 0, cameraWidth)
+    image(video, cameraX, 0, cameraWidth, cameraHeight);
 }
 
 // ====================================================
