@@ -225,7 +225,7 @@ function drawSkeleton(person, skeletonColor) {
 function drawAllSkeletons() {
     // Loop through detectedPeople
     for (let i = 0; i < detectedPeople.length; i++) {
-        // For each detected person
+        // For each detected person call drawSkeleton
         let person = detectedPeople[i];
         drawSkeleton(person, skeletonColour);
     }
