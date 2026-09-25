@@ -23,6 +23,8 @@ let leftPanelX = 0;
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
 
+// Video
+
 // ====================================================
 // Preload
 // ====================================================
@@ -39,7 +41,7 @@ function preload(){
 function setup() {
     // Set up Canvas
     new Canvas(totalCanvasWidth, cameraHeight);
-    
+
     // Set up webcam video
     let constraints = {
         video: {
