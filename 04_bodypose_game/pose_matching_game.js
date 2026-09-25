@@ -164,7 +164,7 @@ function drawDetectionStatus() {
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
     // Set skeleton line colour.
-    stroke(skeletonColor);
+    stroke(skeletonColour);
 
     // Set skeleton line thickness.
     strokeWeight(3);
