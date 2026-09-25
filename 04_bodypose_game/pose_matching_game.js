@@ -26,7 +26,7 @@ let rightPanelX = sidePanelWidth + cameraWidth;
 // Setup variables
 let video;
 let bodyPose; // ML Model
-let detectedPeople = [];
+let detectedPeople = []; // Array to store people the model detects
 
 // ====================================================
 // Preload
