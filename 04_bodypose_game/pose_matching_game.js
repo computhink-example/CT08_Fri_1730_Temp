@@ -61,6 +61,8 @@ function setup() {
 
     // Set up text.
     textAlign(CENTER, CENTER);
+
+    
 }
 
 
