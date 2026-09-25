@@ -142,3 +142,7 @@ function gotPeople(results) {
     // Store results into array
     detectedPeople = results;
 }
+
+function drawDetectionStatus() {
+    
+}
