@@ -70,7 +70,7 @@ function setup() {
     textAlign(CENTER, CENTER);
 
     // Set game variables
-    skeletonColour = color()
+    skeletonColour = color(255, 255, 0); // color(r, g, b)
 }
 
 
