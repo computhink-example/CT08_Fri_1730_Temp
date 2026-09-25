@@ -137,7 +137,7 @@ function drawMiddleLine() {
 // Pose Functions
 // ====================================================
 
-// resu
+// results parameter received from the model
 function gotPeople() {
 
 }
