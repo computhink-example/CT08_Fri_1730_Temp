@@ -92,6 +92,8 @@ function draw() {
 
     // Draw debug info
     drawDetectionStatus();
+
+    // Draw
 }
 
 // ====================================================
