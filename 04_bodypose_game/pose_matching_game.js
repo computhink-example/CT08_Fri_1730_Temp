@@ -76,6 +76,7 @@ function draw() {
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
 
+    
 }
 
 // ====================================================
