@@ -166,12 +166,12 @@ function drawDetectionStatus() {
 
 // Draw line between two body points
 function drawBodyLine(point1, point2) {
-    line(point1.x, point1.y, point2.x, point2.y); // line(x pos 1, y pos 1, x pos 2, y pos 2)
+    line(point1.x + cameraX, point1.y, point2.x, point2.y); // line(x pos 1, y pos 1, x pos 2, y pos 2)
 }
 
 // Draw circle on body point
 function drawBodyPoint(point) {
-    circle(point.x, point.y, 10); // circle(x pos, y pos, diameter)
+    circle(point.x + cameraX, point.y, 10); // circle(x pos, y pos, diameter)
 }
 
 // Draws one person's skeleton.
