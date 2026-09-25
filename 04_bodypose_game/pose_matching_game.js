@@ -32,8 +32,8 @@ let bodyPose; // ML Model
 // ====================================================
 
 function preload(){
-    // Load the model
-    bodyPose = ml5.handPose(options);
+    // Load the Body Pose model
+    bodyPose = ml5.bodyPose(options);
 }
 
 // ====================================================
