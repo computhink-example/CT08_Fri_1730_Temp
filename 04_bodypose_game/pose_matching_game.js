@@ -221,4 +221,4 @@ function drawSkeleton(person, skeletonColor) {
     drawBodyPoint(person.right_hip);
 }
 
-// Draw
+// Draw all detected people's skeletons
