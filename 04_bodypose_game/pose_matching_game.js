@@ -59,10 +59,10 @@ function setup() {
     video = createCapture(constraints);
     video.hide();
 
+    // 
+
     // Set up text.
     textAlign(CENTER, CENTER);
-
-    
 }
 
 
