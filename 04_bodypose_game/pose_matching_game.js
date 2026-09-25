@@ -23,18 +23,17 @@ let leftPanelX = 0;
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
 
-// Setup variables
+// Setup var
 let video;
-let bodyPose; // ML Model
-let detectedPeople = []; // Array to store people the model detects
+let bodyPose;
+let detectedPeople = [];
 
 // ====================================================
 // Preload
 // ====================================================
 
 function preload(){
-    // Load the Body Pose model
-    bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
+    bodyPose = ml5.bodyPose("MoveNet", {flipped : true});
 }
 
 // ====================================================
@@ -43,8 +42,8 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
-    // Set up Canvas
-    new Canvas(totalCanvasWidth, cameraHeight);
+    new Canvas(totalCanvasWidth,cameraHeight);
+
 
     // Set up webcam video
     let constraints = {
@@ -59,10 +58,9 @@ function setup() {
     video = createCapture(constraints);
     video.hide();
 
-    // Give video feed to model to start detecting
-    // Send result to gotPeople function
-    bodyPose.detectStart(video, gotPeople);
-
+    // Give video feed to model to start detection
+    //send result to got ppl function
+    bodyPose.detectedStart(video, gotPeople);
     // Set up text.
     textAlign(CENTER, CENTER);
 }
@@ -81,11 +79,12 @@ function draw() {
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
 
-    // Draw webcam video
+    // Draw webcam vid
     image(video, cameraX, 0, cameraWidth, cameraHeight);
 
     // Draw debug info
     drawDetectionStatus();
+
 }
 
 // ====================================================
@@ -135,12 +134,11 @@ function drawMiddleLine() {
     // Draw the middle line inside the webcam area.
     line(width / 2, 0, width / 2, cameraHeight);
 }
-
 // ====================================================
-// Pose Functions
+// Pose functions
 // ====================================================
 
-// results parameter received from the model
+// results parameter received from thr model
 function gotPeople(results) {
     // Store results into array
     detectedPeople = results;
@@ -148,9 +146,9 @@ function gotPeople(results) {
 
 // Draws debug info on screen and console
 function drawDetectionStatus() {
-    // Set up text
+
     fill(0);
     textSize(24);
-    text("People Detected: " + detectedPeople.length, width / 2, height * 0.1);
+    text("People Detected: "+ detectedPeople.length, width / 2, height * 0.1);
     console.log(detectedPeople);
-}
+}   
