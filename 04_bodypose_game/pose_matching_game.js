@@ -37,7 +37,7 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
-    // Setu
+    // Setup webcam video
     let constraints = {
         video: {
             width: cameraWidth,
