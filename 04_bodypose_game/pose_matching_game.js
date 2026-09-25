@@ -37,19 +37,17 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
-  let constraints = {​
+  let constraints = {
+        video: {
 
-        video: {​
+            width: cameraWidth,
 
-            width: cameraWidth,​
+            height: cameraHeight,
 
-            height: cameraHeight,​
+            aspectRatio: cameraWidth / cameraHeight
 
-            aspectRatio: cameraWidth / cameraHeight​
-
-        },​
-
-        audio: false,​
+        },
+        audio: false,
 
         flipped: true // Makes the video mirrored.​
 
