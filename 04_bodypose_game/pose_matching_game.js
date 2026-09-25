@@ -197,7 +197,7 @@ function drawSkeleton(person, skeletonColor) {
     noStroke();
 
     // Set circle colour.
-    fill(skeletonColor);
+    fill(skeletonColour);
 
     // Draw important body points.
     drawBodyPoint(person.nose);
