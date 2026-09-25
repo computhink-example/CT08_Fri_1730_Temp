@@ -163,7 +163,7 @@ function drawDetectionStatus() {
 
 // Draw line between two body points
 function drawBodyLine(point1, point2) {
-    
+    line()
 }
 
 // Draw circle on body point
