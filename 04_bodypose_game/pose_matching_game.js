@@ -170,7 +170,7 @@ function drawDetectionStatus() {
     console.log(detectedPeople);
 }
 
-
+// 
 
 // Draw line between two body points
 function drawBodyLine(point1, point2) {
