@@ -295,6 +295,7 @@ function findPlayers() {
                 if (distanceFromPlayer1Center < closestPlayer1Distance) {
                     closestPlayer1Distance = distanceFromPlayer1Center;
                     player1Person = person;
+                    console.log("Found P1");
                 }
             } else {
                 // If it is on the right
@@ -303,6 +304,7 @@ function findPlayers() {
                 if (distanceFromPlayer2Center < closestPlayer2Distance) {
                     closestPlayer2Distance = distanceFromPlayer2Center;
                     player2Person = person;
+                    console.log("Found P1");
                 }
             }
         }
