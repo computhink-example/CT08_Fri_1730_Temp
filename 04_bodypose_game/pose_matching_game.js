@@ -186,6 +186,7 @@ function pointIsReady(point) {
 
 // Draw line between two body points
 function drawBodyLine(point1, point2) {
+    if (pointIsReady(point1))
     line(point1.x + cameraX, point1.y, point2.x + cameraX, point2.y); // line(x pos 1, y pos 1, x pos 2, y pos 2)
 }
 
