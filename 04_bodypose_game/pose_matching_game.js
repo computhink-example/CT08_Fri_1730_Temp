@@ -172,8 +172,9 @@ function drawDetectionStatus() {
 
 // Check confidence of each keypoint
 function pointIsReady(point) {
+    // Check if point exists
     if (point === null | point === undefined) {
-        
+        return false;
     }
 }
 
