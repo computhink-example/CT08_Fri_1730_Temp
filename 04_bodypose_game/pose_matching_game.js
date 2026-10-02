@@ -205,7 +205,7 @@ function drawBodyPoint(point) {
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
     // Set skeleton line colour.
-    stroke(skeletonColour);
+    stroke(skeletonColor);
 
     // Set skeleton line thickness.
     strokeWeight(3);
