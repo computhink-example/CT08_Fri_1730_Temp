@@ -314,6 +314,7 @@ function drawPlayerSkeletons() {
     // Check if player1 or player2 exists
     if (player1Person !== null) {
         drawSkeleton(player1Person, player1Colour);
+        console.log("P1 drawn")
     }
     if (player2Person !== null) {
         drawSkeleton(player2Person, player2Colour);
