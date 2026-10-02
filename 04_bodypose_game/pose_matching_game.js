@@ -292,6 +292,8 @@ function findPlayers() {
                     closestPlayer1Distance = distanceFromPlayer1Center;
                     player1Person = person;
                 }
+            } else {
+                if it is on the left
             }
         }
     }
