@@ -293,7 +293,7 @@ function findPlayers() {
                     player1Person = person;
                 }
             } else {
-                if it is on the left
+                // If it is on the right
             }
         }
     }
