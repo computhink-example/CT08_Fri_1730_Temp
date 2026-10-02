@@ -307,5 +307,5 @@ function findPlayers() {
 
 // Draw player1 and player2 skeleton
 function drawPlayerSkeletons() {
-    
+    // Check if player1 
 }
