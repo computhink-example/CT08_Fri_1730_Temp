@@ -245,4 +245,6 @@ function findPlayers() {
     // Reset player1 and player2
     player1Person = null;
     player2Person = null;
+
+    let closest
 }
