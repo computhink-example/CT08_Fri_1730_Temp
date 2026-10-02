@@ -172,7 +172,9 @@ function drawDetectionStatus() {
 
 // Check confidence of each keypoint
 function pointIsReady(point) {
-    
+    if (point === null | point === undefined) {
+        
+    }
 }
 
 // Draw line between two body points
