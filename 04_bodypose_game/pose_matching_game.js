@@ -32,8 +32,8 @@ let detectedPeople = []; // Array to store people the model detects
 let skeletonColour;
 let player1Colour;
 let player2Colour;
-let player1Person;
-let player2Person;
+let player1Person = null;
+let player2Person = null;
 
 // ====================================================
 // Preload
