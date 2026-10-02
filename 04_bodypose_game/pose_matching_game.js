@@ -297,8 +297,8 @@ function findPlayers() {
                 let distanceFromPlayer2Center = abs(noseX - player2CenterX);
                 // Update who is closest to player2CenterX and assign player2
                 if (distanceFromPlayer2Center < closestPlayer2Distance) {
-                    closestPlayer2Distance = distanceFromPlayer1Center;
-                    player1Person = person;
+                    closestPlayer2Distance = distanceFromPlayer2Center;
+                    player2Person = person;
                 }
             }
         }
