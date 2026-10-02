@@ -259,6 +259,7 @@ function findPlayers() {
     for (let i = 0; i < detectedPeople.length; i++) {
         // For each detected person call drawSkeleton
         let person = detectedPeople[i];
-        drawSkeleton(person, skeletonColour);
+        let nose = person.nose;
+        
     }
 }
