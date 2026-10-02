@@ -102,7 +102,8 @@ function draw() {
     // Draw a skeleton for all detected people
     // drawAllSkeletons();
 
-    // Draw player1 and player2
+    // Find and draw player1 and player2
+    findPlayers();
     drawPlayerSkeletons();
 }
 
