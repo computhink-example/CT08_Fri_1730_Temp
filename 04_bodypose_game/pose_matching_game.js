@@ -250,7 +250,7 @@ function findPlayers() {
     let closestPlayer1Distance = Number.MAX_VALUE;
     let closestPlayer2Distance = Number.MAX_VALUE;
 
-    // Center x pos of left, right side
+    // Center x pos of left, right and middle
     let player1CenterX = width / 4 + cameraX;
     let player2CenterX = width / 4 * 3 + cameraX;
     let middleX = width / 2 + cameraX;
