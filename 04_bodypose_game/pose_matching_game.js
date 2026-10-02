@@ -312,10 +312,10 @@ function findPlayers() {
 // Draw player1 and player2 skeleton
 function drawPlayerSkeletons() {
     // Check if player1 or player2 exists
-    if (player1Person != null) {
+    if (player1Person !== null) {
         drawSkeleton(player1Person, player1Colour);
     }
-    if (player2Person != null) {
+    if (player2Person !== null) {
         drawSkeleton(player2Person, player2Colour);
     }
 }
