@@ -194,9 +194,8 @@ function drawBodyLine(point1, point2) {
 // Draw circle on body point
 function drawBodyPoint(point) {
     if (pointIsReady(point)) {
-        
+        circle(point.x + cameraX, point.y, 10); // circle(x pos, y pos, diameter)
     }
-    circle(point.x + cameraX, point.y, 10); // circle(x pos, y pos, diameter)
 }
 
 // Draws one person's skeleton.
