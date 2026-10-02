@@ -282,9 +282,9 @@ function findPlayers() {
         // Check if nose is detected confidently
         if (pointIsReady(nose)) {
             // Get x pos of nose
-            noseX = nose.x + cameraX;
+            let noseX = nose.x + cameraX;
 
-            
+
         }
     }
 }
