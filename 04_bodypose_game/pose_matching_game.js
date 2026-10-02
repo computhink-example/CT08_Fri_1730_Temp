@@ -260,6 +260,7 @@ function findPlayers() {
         // For each detected person call drawSkeleton
         let person = detectedPeople[i];
         let nose = person.nose;
+
         
     }
 }
