@@ -178,7 +178,9 @@ function pointIsReady(point) {
     }
 
     if (point.confidence > 0.25) {
-        
+        return true;
+    } else {
+        return false;
     }
 }
 
