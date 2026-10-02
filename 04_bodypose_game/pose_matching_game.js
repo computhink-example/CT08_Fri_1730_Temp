@@ -255,5 +255,10 @@ function findPlayers() {
     let player2CenterX = width / 4 * 3 + cameraX;
     let middleX = width / 2 + cameraX;
 
-    
+     // Loop through detectedPeople
+    for (let i = 0; i < detectedPeople.length; i++) {
+        // For each detected person call drawSkeleton
+        let person = detectedPeople[i];
+        drawSkeleton(person, skeletonColour);
+    }
 }
