@@ -240,4 +240,4 @@ function drawAllSkeletons() {
     }
 }
 
-// 
+// Check positions of each person an
