@@ -281,7 +281,7 @@ function findPlayers() {
 
         // Check if nose is detected confidently
         if (pointIsReady(nose)) {
-            
+            // Get nose x po
         }
     }
 }
