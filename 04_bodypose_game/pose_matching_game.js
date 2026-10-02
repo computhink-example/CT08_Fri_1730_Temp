@@ -170,7 +170,8 @@ function drawDetectionStatus() {
     console.log(detectedPeople);
 }
 
-// 
+// Check confidence of each keypoint
+
 
 // Draw line between two body points
 function drawBodyLine(point1, point2) {
