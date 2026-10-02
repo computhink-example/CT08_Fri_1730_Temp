@@ -255,5 +255,5 @@ function findPlayers() {
     let player2CenterX = width / 4 * 3 + cameraX;
     let middleX = width / 2 + cameraX;
 
-
+    
 }
