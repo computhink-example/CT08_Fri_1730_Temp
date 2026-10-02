@@ -100,7 +100,7 @@ function draw() {
     drawDetectionStatus();
 
     // Draw a skeleton for all detected people
-    drawAllSkeletons();
+    //drawAllSkeletons();
 }
 
 // ====================================================
