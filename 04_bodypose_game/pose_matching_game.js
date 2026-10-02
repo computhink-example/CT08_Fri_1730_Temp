@@ -304,7 +304,7 @@ function findPlayers() {
                 if (distanceFromPlayer2Center < closestPlayer2Distance) {
                     closestPlayer2Distance = distanceFromPlayer2Center;
                     player2Person = person;
-                    console.log("Found P1");
+                    console.log("Found P2");
                 }
             }
         }
