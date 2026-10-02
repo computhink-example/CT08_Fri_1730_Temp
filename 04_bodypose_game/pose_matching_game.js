@@ -239,3 +239,5 @@ function drawAllSkeletons() {
         drawSkeleton(person, skeletonColour);
     }
 }
+
+// 
