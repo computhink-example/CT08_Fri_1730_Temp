@@ -253,4 +253,6 @@ function findPlayers() {
     // Center x pos left and right side
     let player1CenterX = width / 4 + cameraX;
     let player2CenterX = width / 4 * 3 + cameraX;
+
+    let cente
 }
