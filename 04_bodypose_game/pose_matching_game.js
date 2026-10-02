@@ -284,7 +284,7 @@ function findPlayers() {
             // Get x pos of nose
             let noseX = nose.x + cameraX;
 
-            
+            // Check if it is on the left
         }
     }
 }
