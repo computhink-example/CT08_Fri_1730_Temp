@@ -279,6 +279,9 @@ function findPlayers() {
         let person = detectedPeople[i];
         let nose = person.nose;
 
-        
+        // Check if nose is detected confidently
+        if (pointIsReady(nose)) {
+            
+        }
     }
 }
