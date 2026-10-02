@@ -285,6 +285,9 @@ function findPlayers() {
             let noseX = nose.x + cameraX;
 
             // Check if it is on the left
+            if (noseX < middleX) {
+                
+            }
         }
     }
 }
