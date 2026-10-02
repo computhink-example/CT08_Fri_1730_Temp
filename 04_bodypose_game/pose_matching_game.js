@@ -287,7 +287,7 @@ function findPlayers() {
             // Check if it is on the left
             if (noseX < middleX) {
                 let distanceFromPlayer1Center = abs(noseX - player1CenterX);
-                // Loop through each 
+                // Loop through each detected person and update who is closest and assign player1
                 if (distanceFromPlayer1Center < closestPlayer1Distance) {
                     closestPlayer1Distance = distanceFromPlayer1Center;
                     player1Person = person;
