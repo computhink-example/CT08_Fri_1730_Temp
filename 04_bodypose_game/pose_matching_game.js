@@ -30,6 +30,8 @@ let detectedPeople = []; // Array to store people the model detects
 
 // Game variables
 let skeletonColour;
+let player1Colour;
+let player2Colour;
 
 // ====================================================
 // Preload
