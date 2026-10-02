@@ -240,4 +240,7 @@ function drawAllSkeletons() {
     }
 }
 
-// Check positions of each person an
+// Check positions of each person and assign player1 and player2
+function findPlayers() {
+    
+}
