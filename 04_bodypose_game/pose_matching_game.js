@@ -19,9 +19,11 @@ let cameraX = sidePanelWidth;
 
 // x-position of the left panel.
 let leftPanelX = 0;
+let leftPanelCenterX = sidePanelWidth / 2;
 
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
+let rightPanelCenterX = rightPanelX + sidePanelWidth / 2;
 
 // Setup variables
 let video;
@@ -34,6 +36,15 @@ let player1Colour;
 let player2Colour;
 let player1Person = null;
 let player2Person = null;
+let poseArray = [];
+let currentPose = null;
+
+// Game assets
+let bothHandsUpImg;
+let leftHandUpImg;
+let rightHandUpImg;
+let handsOnHeadImg;
+let tPoseImg;
 
 // ====================================================
 // Preload
@@ -42,6 +53,13 @@ let player2Person = null;
 function preload(){
     // Load the Body Pose model
     bodyPose = ml5.bodyPose("MoveNet", { flipped: true });
+
+    // Load assets
+    bothHandsUpImg = loadImage("assets/poseBattle_bothHandsUp.png");
+    leftHandUpImg = loadImage("assets/poseBattle_leftHandUp.png");
+    rightHandUpImg = loadImage("assets/poseBattle_rightHandUp.png");
+    handsOnHeadImg = loadImage("assets/poseBattle_handsOnHead.png");
+    tPoseImg = loadImage("assets/poseBattle_tpose.png");
 }
 
 // ====================================================
@@ -77,6 +95,10 @@ function setup() {
     skeletonColour = color(255, 255, 0); // color(r, g, b)
     player1Colour = color(255, 0, 0);
     player2Colour = color(0, 0, 255);
+
+    // Set up poses
+    setupPoseArray();
+    currentPose = poseArray[0];
 }
 
 
@@ -97,7 +119,7 @@ function draw() {
     image(video, cameraX, 0, cameraWidth, cameraHeight);
 
     // Draw debug info
-    drawDetectionStatus();
+    // drawDetectionStatus();
 
     // Draw a skeleton for all detected people
     // drawAllSkeletons();
@@ -105,6 +127,10 @@ function draw() {
     // Find and draw player1 and player2
     findPlayers();
     drawPlayerSkeletons();
+
+    // Draw game info
+    drawGameUI();
+    drawPlayerStatus();
 }
 
 // ====================================================
@@ -273,9 +299,9 @@ function findPlayers() {
     let closestPlayer2Distance = Number.MAX_VALUE;
 
     // Center x pos of left, right and middle
-    let player1CenterX = width / 4 + cameraX;
-    let player2CenterX = width / 4 * 3 + cameraX;
-    let middleX = width / 2 + cameraX;
+    let player1CenterX = cameraWidth / 4 + cameraX;
+    let player2CenterX = cameraWidth / 4 * 3 + cameraX;
+    let middleX = cameraWidth / 2 + cameraX;
 
      // Loop through detectedPeople
     for (let i = 0; i < detectedPeople.length; i++) {
@@ -287,6 +313,7 @@ function findPlayers() {
         if (pointIsReady(nose)) {
             // Get x pos of nose
             let noseX = nose.x + cameraX;
+            // console.log(noseX);
 
             // Check if it is on the left
             if (noseX < middleX) {
@@ -319,5 +346,81 @@ function drawPlayerSkeletons() {
     }
     if (player2Person !== null) {
         drawSkeleton(player2Person, player2Colour);
+    }
+}
+
+// Function to add poses into array
+function setupPoseArray() {
+    poseArray = [
+        // Store pose info in object (python dictionary)
+        {
+            name: "Both Hands Up",
+            image: bothHandsUpImg,
+            id: "bothHandsUp"
+        },
+        {
+            name: "Left Hand Up",
+            image: leftHandUpImg,
+            id: "leftHandUp"
+        },
+        {
+            name: "Right Hand Up",
+            image: rightHandUpImg,
+            id: "rightHandUp"
+        },
+        {
+            name: "Hands on Head",
+            image: handsOnHeadImg,
+            id: "handsOnHead"
+        },
+        {
+            name: "T Pose",
+            image: tPoseImg,
+            id: "tPose"
+        }
+    ]
+}
+
+// Function to draw game info
+function drawGameUI() {
+    // Stop function if there is no current pose
+    if (currentPose === null || currentPose === undefined) {
+        return;
+    }
+
+    // Draw pose name
+    fill(200, 20, 200);
+    textSize(28);
+    text(currentPose.name, width / 2, height * 0.2); // (str, x pos, y pos)
+
+    // Draw pose image
+    imageMode(CENTER);
+    image(currentPose.image, width / 2, height * 0.7, 230, 230); // (image, x pos, y pos, width, height)
+    // Reset to default alignment
+    imageMode(CORNER);
+}
+
+// Function to draw player1 and player2 info
+function drawPlayerStatus() {
+    // Text settings
+    textSize(28);
+    noStroke(); // Remove text outline
+    // stroke(0);
+    // strokeWeight(10);
+
+    if (player1Person !== null) {
+        fill(player1Colour);
+        text("Detected", leftPanelCenterX, height * 0.5);
+    } else {
+        fill(player1Colour);
+        text("Not detected", leftPanelCenterX, height * 0.5);
+    }
+
+    if (player2Person !== null) {
+        fill(player2Colour);
+        text("Detected", rightPanelCenterX, height * 0.5);
+    } else {
+        fill(player2Colour);
+        text("Not detected", rightPanelCenterX, height * 0.5);
     }
 }
